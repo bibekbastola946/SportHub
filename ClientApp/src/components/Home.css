@@ -1,0 +1,38 @@
+.centered-container{
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh; /* This ensures the entire viewport height is covered */
+
+}
+/* Center the card and adjust its styling */
+.custom-card {
+    margin: 0 auto;
+    background-color: #F5F5DC;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Style the CardMedia (image) */
+  .MuiCardMedia-img {
+    object-fit: cover;
+  }
+  
+  /* Style the CardActions (buttons) */
+  /* Style the CardActions (buttons) */
+.custom-button {
+    background-color: #007bff;
+    color: white;
+    margin-right: 10px;
+    transition: background-color 0.3s; /* Add a smooth transition effect */
+  }
+  
+  /* Change button color to green on hover */
+  .custom-button:hover {
+    background-color: #28a745; /* Change to green on hover */
+  }
+  
+  
+  /* Add more custom styles as needed */
+  
