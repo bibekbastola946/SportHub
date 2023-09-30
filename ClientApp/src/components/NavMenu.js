@@ -46,7 +46,9 @@ export class NavMenu extends Component {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             SportHub
           </Typography>
-          <Button color="inherit">Login</Button>
+          <Link to="/signin" style={{ textDecoration: 'none' }}>
+            <Button color="inherit">Login</Button>
+          </Link>
         </Toolbar>
       </AppBar>
     </Box>
