@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using SportHub.Dtos;
+using SportHub.Helpers;
 using SportHub.Models;
 using Swashbuckle.Swagger;
 
@@ -8,20 +10,15 @@ namespace SportHub.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
-        // Mock data for demonstration purposes
-        private static readonly List<User> _users = new List<User>
-        {
-            new User { UserId = 1, FirstName = "John", LastName = "Doe", Email = "john@example.com" },
-            new User { UserId = 2, FirstName = "Jane", LastName = "Smith", Email = "jane@example.com" },
-            new User { UserId = 3, FirstName = "Bob", LastName = "Johnson", Email = "bob@example.com" }
-        };
 
         private readonly ILogger<UserController> _logger;
+        private UserService _userService;
         private readonly SportHubContext _context;
 
-        public UserController(SportHubContext context, ILogger<UserController> logger)
+        public UserController(SportHubContext context, ILogger<UserController> logger, UserService userService)
         {
             _logger = logger;
+            _userService = userService;
             _context = context;
         }
     }
