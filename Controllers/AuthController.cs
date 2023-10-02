@@ -28,5 +28,20 @@ namespace SportHub.Controllers
             return Ok(user);
 
         }
+        [HttpPost("login")]
+        public IActionResult Login(UserDto request)
+        {
+            _authService = new(_context);
+            if (user.Username != request.Username)
+            {
+                return BadRequest("User not found!");
+            }
+            bool IsValidPassword = _authService.VerifyPasswordHash(request.Password, user.PasswordHash, user.PasswordSalt);
+            if(!IsValidPassword)
+            {
+                return BadRequest("Wrong password");
+            }
+            return Ok("My Token");
+        }
     }
 }
